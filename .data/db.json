@@ -1,0 +1,536 @@
+{
+  "users": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "email": "demo@buildbridge.dev",
+      "created_at": "2026-10-04T18:02:14.041Z"
+    },
+    {
+      "id": "0e314de1-255d-4010-a4b0-4894a2659446",
+      "email": "alice@buildbridge.dev",
+      "created_at": "2026-10-04T20:07:35.447Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "11111111-1111-1111-1111-111111111111",
+      "user_id": "00000000-0000-0000-0000-000000000001",
+      "name": "Waiting Room App",
+      "idea_text": "I want to build a web app where people join a queue, see their token number, and staff can call the next person.",
+      "status": "prompt ready",
+      "planner_model": "openai/gpt-4o",
+      "builder_model": "deepseek/deepseek-chat",
+      "created_at": "2026-10-04T18:02:14.041Z",
+      "updated_at": "2026-10-05T08:58:07.605Z"
+    }
+  ],
+  "planner_chats": [
+    {
+      "id": "22222222-2222-2222-2222-222222222222",
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "title": "Initial idea",
+      "created_at": "2026-10-04T18:02:14.041Z"
+    }
+  ],
+  "agent_chats": [
+    {
+      "id": "33333333-3333-3333-3333-333333333333",
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "title": "Build Version 1",
+      "status": "active",
+      "created_at": "2026-10-04T19:02:14.041Z"
+    },
+    {
+      "id": "f1b2a88b-a787-44cf-88b1-ee3c4a1fd4a7",
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "title": "Build Run #2",
+      "status": "active",
+      "created_at": "2026-10-05T08:56:03.668Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "55555555-5555-5555-5555-555555555551",
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "I want to build a web app where people join a queue, see their token number, and staff can call the next person.",
+      "created_at": "2026-10-04T18:12:14.041Z"
+    },
+    {
+      "id": "55555555-5555-5555-5555-555555555552",
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "That is a great utility! A real-time digital queue system needs two core personas: the Patient/Customer view and the Staff/Operator dashboard. Let us break this down into clear components: 1) Public queue check-in and live token display, 2) Staff admin panel to call, hold, or complete tickets, 3) Real-time state synchronization using Supabase Realtime or WebSockets. Would you like me to generate the full project plan?",
+      "model_used": "google/gemini-2.5-flash",
+      "tokens_in": 32,
+      "tokens_out": 85,
+      "created_at": "2026-10-04T18:17:14.041Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "How should we handle audio chimes for token calls?",
+      "id": "41e4970e-6ce3-4414-b2ae-7e4dc839b9ad",
+      "created_at": "2026-10-04T20:04:44.625Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Please create the official Project Plan for this application.",
+      "id": "8f365614-838e-4101-ba34-1c8c7fc58f9d",
+      "created_at": "2026-10-04T20:04:45.169Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Please generate the next Builder Agent prompt.",
+      "id": "adec6d28-2369-4e88-aa33-128f7a5b912c",
+      "created_at": "2026-10-04T20:04:45.244Z"
+    },
+    {
+      "chat_id": "33333333-3333-3333-3333-333333333333",
+      "chat_type": "agent",
+      "role": "user",
+      "content": "[Imported Agent OUTPUT]:\n\nImplemented components/QueueDisplay.tsx and audio chime toggle in components/StaffPanel.tsx.",
+      "id": "abfcde78-0fd3-4cbb-ab5f-5f016d895c86",
+      "created_at": "2026-10-04T20:04:45.324Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "How should we handle audio chimes for token calls?",
+      "id": "fac17754-cf24-420a-ae3d-484f98d5cd1c",
+      "created_at": "2026-10-04T20:05:29.191Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Please create the official Project Plan for this application.",
+      "id": "2d66e282-ad05-408c-89ad-60dcd5cdcd5b",
+      "created_at": "2026-10-04T20:05:29.594Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Please generate the next Builder Agent prompt.",
+      "id": "e10a3cbb-ecb6-4d21-aaf5-212f2ecd3315",
+      "created_at": "2026-10-04T20:05:29.664Z"
+    },
+    {
+      "chat_id": "33333333-3333-3333-3333-333333333333",
+      "chat_type": "agent",
+      "role": "user",
+      "content": "[Imported Agent OUTPUT]:\n\nImplemented components/QueueDisplay.tsx and audio chime toggle in components/StaffPanel.tsx.",
+      "id": "02c9731a-c150-4d28-ab9c-9c914e4072e7",
+      "created_at": "2026-10-04T20:05:29.753Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "How should we handle audio chimes for token calls?",
+      "id": "2895d6f1-aba7-44ec-a145-36a43e98bdac",
+      "created_at": "2026-10-04T20:06:53.131Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "I understand your vision for this project. To make sure we architect this properly, let's look at the key requirements:\n\n1. **User Experience**: We need a low-friction interface so visitors can check in within 5 seconds without needing an account.\n2. **Staff Workflow**: Operators need clear keyboard shortcuts or large buttons to advance the queue quickly during peak hours.\n3. **Resilience**: The system should maintain state across page refreshes and display network connectivity status.\n\nWould you like me to generate the full structured **Project Plan**, or shall we refine the specific database requirements first?",
+      "model_used": "google/gemini-2.5-flash (Simulated)",
+      "tokens_in": 32,
+      "tokens_out": 170,
+      "id": "097e66a0-6501-4927-8690-30e3a065726e",
+      "created_at": "2026-10-04T20:06:53.136Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Please create the official Project Plan for this application.",
+      "id": "7a784a0d-7fd3-4831-9543-487b295094ff",
+      "created_at": "2026-10-04T20:06:53.183Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "### 📋 Comprehensive Project Plan\n\n#### 1. Architecture Overview\n- **Frontend / Client**: Next.js 15 App Router with Tailwind CSS & accessible UI components.\n- **Backend / Realtime**: Supabase PostgreSQL with Row-Level Security (RLS) and real-time pub/sub subscriptions.\n- **State Management**: React Query / SWR with optimistic updates.\n\n#### 2. Core Modules & Data Models\n- **Queue / Token Management**:\n  - Sequential daily token generator (`#A001`, `#A002`).\n  - Statuses: `waiting`, `called`, `serving`, `completed`, `no_show`.\n- **Public Screen**:\n  - Live full-screen display of current token with audio chime.\n  - Estimated wait times based on historical queue throughput.\n- **Staff Control Station**:\n  - One-click \"Call Next\", \"Recall\", and \"Mark Done\".\n  - Multi-counter support (Counter 1, Counter 2).\n\n#### 3. Milestones & Build Order\n1. **Milestone 1**: Database schema & token state machine.\n2. **Milestone 2**: Public queue display component & customer self-checkin modal.\n3. **Milestone 3**: Staff counter panel & real-time synchronization.\n4. **Milestone 4**: Audio/visual alerts and polish.",
+      "model_used": "google/gemini-2.5-flash (Simulated)",
+      "tokens_in": 130,
+      "tokens_out": 292,
+      "id": "72b68d27-8bf9-4725-a9ce-523b13612398",
+      "created_at": "2026-10-04T20:06:53.187Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Please generate the next Builder Agent prompt.",
+      "id": "6d84bcd1-bc45-4f2f-83b9-652925ce983e",
+      "created_at": "2026-10-04T20:06:53.230Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "I have generated the next Builder Agent prompt and loaded it into the Builder Agent Workspace (Session prompt ready):\n\n```text\nI understand your vision for this project. To make sure we architect this properly, let's look at the key requirements:\n\n1. **User Experience**: We need a low-friction interface so visitors can check in within 5 seconds without needing an account.\n2. **Staff Workflow**: Operators need clear keyboard shortcuts or large buttons to advance the queue quickly during peak hours.\n3. **Resilience**: The system should maintain state across page refreshes and display network connectivity status.\n\nWould you like me to generate the full structured **Project Plan**, or shall we refine the specific database requirements first?\n```\n\nYou can copy this prompt from the right-hand panel and paste it into Cline, Codex, Antigravity, or Claude Code.",
+      "model_used": "google/gemini-2.5-flash (Simulated)",
+      "tokens_in": 89,
+      "tokens_out": 170,
+      "id": "4b3c7324-bf24-4ceb-9a34-a611e092f25a",
+      "created_at": "2026-10-04T20:06:53.239Z"
+    },
+    {
+      "chat_id": "33333333-3333-3333-3333-333333333333",
+      "chat_type": "agent",
+      "role": "user",
+      "content": "[Imported Agent OUTPUT]:\n\nImplemented components/QueueDisplay.tsx and audio chime toggle in components/StaffPanel.tsx.",
+      "id": "38975083-dc43-4862-a056-d5c73fdc9a29",
+      "created_at": "2026-10-04T20:06:53.280Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Please review the latest Builder Agent output.",
+      "id": "39a0a799-dc13-4397-8c0c-2f43911bac84",
+      "created_at": "2026-10-04T20:06:53.317Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "### 🔍 Agent Output Review: **Partially completed**\n\n**Evidence Found:**\n- ✅ Code files QueueDisplay.tsx and StaffPanel.tsx were provided in the agent response\n- ✅ Mark Done handler transitions token status to completed\n\n**Completed:**\n- ✓ Created initial UI layout for QueueDisplay and StaffPanel components\n- ✓ Added token number state management and increment logic\n- ✓ Implemented responsive desktop and mobile container styles\n\n**Missing / Incomplete:**\n- ⚠️ Audio chime sound effect for when a token is called\n- ⚠️ Real-time broadcast hook to keep multiple browser tabs in sync\n- ⚠️ Input validation on the guest name check-in form\n\n**Broken / Errors:**\n- ❌ Recall button triggers counter increment instead of replaying current token\n\n**Next Recommended Task:**\n> 🎯 Fix the Recall button behavior and implement the Web Audio API sound chime toggle.",
+      "model_used": "google/gemini-2.5-flash (Simulated)",
+      "tokens_in": 159,
+      "tokens_out": 205,
+      "id": "d16cff41-3be3-472d-aafc-d38f905addca",
+      "created_at": "2026-10-04T20:06:53.319Z"
+    },
+    {
+      "chat_id": "4d761f4a-cade-4b4f-a883-c042591fa3bd",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "Welcome to **Markdown Note Vault**! I've loaded your project goal into Project Memory:\n\n> \"A markdown note-taking app with local storage sync and graph view.\"\n\nHow would you like to start? We can refine the architecture, discuss the technical stack, or click **\"Create Project Plan\"** to outline the build phases!",
+      "model_used": "anthropic/claude-3.7-sonnet",
+      "tokens_in": 25,
+      "tokens_out": 65,
+      "id": "17c661b6-e3b1-429a-a362-25c85321b2ff",
+      "created_at": "2026-10-04T20:07:35.501Z"
+    },
+    {
+      "chat_id": "4d761f4a-cade-4b4f-a883-c042591fa3bd",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Can you recommend the graph visualization library?",
+      "id": "d1c11cf4-43e1-4941-8706-69651a5cc792",
+      "created_at": "2026-10-04T20:07:35.612Z"
+    },
+    {
+      "chat_id": "4d761f4a-cade-4b4f-a883-c042591fa3bd",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "I understand your vision for this project. To make sure we architect this properly, let's look at the key requirements:\n\n1. **User Experience**: We need a low-friction interface so visitors can check in within 5 seconds without needing an account.\n2. **Staff Workflow**: Operators need clear keyboard shortcuts or large buttons to advance the queue quickly during peak hours.\n3. **Resilience**: The system should maintain state across page refreshes and display network connectivity status.\n\nWould you like me to generate the full structured **Project Plan**, or shall we refine the specific database requirements first?",
+      "model_used": "anthropic/claude-3.7-sonnet (Simulated)",
+      "tokens_in": 32,
+      "tokens_out": 170,
+      "id": "f357a8eb-6e5a-4d8c-a2ec-4df2fe02625c",
+      "created_at": "2026-10-04T20:07:35.619Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Please generate the next Builder Agent prompt.",
+      "id": "9b4018ce-ebea-4315-8af4-f399a0aebf96",
+      "created_at": "2026-10-04T20:14:03.609Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "I have generated the next Builder Agent prompt and loaded it into the Builder Agent Workspace (Session prompt ready):\n\n```text\nI understand your vision for this project. To make sure we architect this properly, let's look at the key requirements:\n\n1. **User Experience**: We need a low-friction interface so visitors can check in within 5 seconds without needing an account.\n2. **Staff Workflow**: Operators need clear keyboard shortcuts or large buttons to advance the queue quickly during peak hours.\n3. **Resilience**: The system should maintain state across page refreshes and display network connectivity status.\n\nWould you like me to generate the full structured **Project Plan**, or shall we refine the specific database requirements first?\n```\n\nYou can copy this prompt from the right-hand panel and paste it into Cline, Codex, Antigravity, or Claude Code.",
+      "model_used": "google/gemini-2.5-flash (Simulated)",
+      "tokens_in": 89,
+      "tokens_out": 170,
+      "id": "3991767a-777f-42b9-bcdf-a63456515920",
+      "created_at": "2026-10-04T20:14:03.618Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "Please generate the next Builder Agent prompt.",
+      "id": "385077a7-0ec5-4985-b053-e52a4ecab8df",
+      "created_at": "2026-10-04T20:14:05.322Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "I have generated the next Builder Agent prompt and loaded it into the Builder Agent Workspace (Session prompt ready):\n\n```text\nI understand your vision for this project. To make sure we architect this properly, let's look at the key requirements:\n\n1. **User Experience**: We need a low-friction interface so visitors can check in within 5 seconds without needing an account.\n2. **Staff Workflow**: Operators need clear keyboard shortcuts or large buttons to advance the queue quickly during peak hours.\n3. **Resilience**: The system should maintain state across page refreshes and display network connectivity status.\n\nWould you like me to generate the full structured **Project Plan**, or shall we refine the specific database requirements first?\n```\n\nYou can copy this prompt from the right-hand panel and paste it into Cline, Codex, Antigravity, or Claude Code.",
+      "model_used": "google/gemini-2.5-flash (Simulated)",
+      "tokens_in": 89,
+      "tokens_out": 170,
+      "id": "bef15148-f116-4df1-ac12-f18dd4954539",
+      "created_at": "2026-10-04T20:14:05.329Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "user",
+      "content": "i want to build a website",
+      "id": "c456afbb-f1d8-44f9-ac99-9ab82b2b0751",
+      "created_at": "2026-10-05T08:59:11.706Z"
+    },
+    {
+      "chat_id": "22222222-2222-2222-2222-222222222222",
+      "chat_type": "planner",
+      "role": "assistant",
+      "content": "I understand your vision for this project. To make sure we architect this properly, let's look at the key requirements:\n\n1. **User Experience**: We need a low-friction interface so visitors can check in within 5 seconds without needing an account.\n2. **Staff Workflow**: Operators need clear keyboard shortcuts or large buttons to advance the queue quickly during peak hours.\n3. **Resilience**: The system should maintain state across page refreshes and display network connectivity status.\n\nWould you like me to generate the full structured **Project Plan**, or shall we refine the specific database requirements first?",
+      "model_used": "openai/gpt-4o (Simulated)",
+      "tokens_in": 26,
+      "tokens_out": 170,
+      "id": "60fa16bd-4b24-4bea-a674-aabed6c9d5a2",
+      "created_at": "2026-10-05T08:59:11.720Z"
+    }
+  ],
+  "project_memory": [
+    {
+      "id": "66666666-6666-6666-6666-666666666661",
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "goal",
+      "title": "Project Objective",
+      "content": "Build a responsive web application where visitors join a queue, receive a real-time token number, and staff manage calls and attendance.",
+      "importance": "critical",
+      "created_at": "2026-10-04T18:22:14.041Z",
+      "updated_at": "2026-10-04T20:02:14.041Z"
+    },
+    {
+      "id": "66666666-6666-6666-6666-666666666662",
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "decision",
+      "title": "Architecture & Stack Decisions",
+      "content": "Decided to use Next.js 15 App Router with Tailwind CSS and Supabase PostgreSQL. Token generation will be sequential per day with status: waiting, called, completed, cancelled.",
+      "importance": "high",
+      "created_at": "2026-10-04T18:27:14.041Z",
+      "updated_at": "2026-10-04T20:02:14.041Z"
+    },
+    {
+      "id": "66666666-6666-6666-6666-666666666663",
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "progress",
+      "title": "Phase 1 Architecture Plan Approved",
+      "content": "Defined public check-in screen, queue status live board, and operator controls. Prepared initial Builder Agent prompt.",
+      "importance": "normal",
+      "created_at": "2026-10-04T18:32:14.041Z",
+      "updated_at": "2026-10-04T20:02:14.041Z"
+    },
+    {
+      "id": "66666666-6666-6666-6666-666666666664",
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "issue",
+      "title": "Audio Notification Compatibility",
+      "content": "Audio chime when a token is called requires user interaction permissions in modern browsers. Need a visual toggle for sound alert.",
+      "importance": "normal",
+      "created_at": "2026-10-04T18:42:14.041Z",
+      "updated_at": "2026-10-04T20:02:14.041Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "progress",
+      "title": "Builder Agent Output Imported",
+      "content": "Agent output imported (output): \"Implemented components/QueueDisplay.tsx and audio chime toggle in components/StaffPanel.tsx.\"",
+      "source_chat_id": "33333333-3333-3333-3333-333333333333",
+      "importance": "normal",
+      "id": "cc3a2ae5-a3d1-477e-bd3b-b4b73b9e96fd",
+      "created_at": "2026-10-04T20:04:45.325Z",
+      "updated_at": "2026-10-04T20:04:45.325Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "progress",
+      "title": "Builder Agent Output Imported",
+      "content": "Agent output imported (output): \"Implemented components/QueueDisplay.tsx and audio chime toggle in components/StaffPanel.tsx.\"",
+      "source_chat_id": "33333333-3333-3333-3333-333333333333",
+      "importance": "normal",
+      "id": "a7b530e0-208f-4aa8-8032-322de1e9ab95",
+      "created_at": "2026-10-04T20:05:29.754Z",
+      "updated_at": "2026-10-04T20:05:29.754Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "decision",
+      "title": "Approved Project Plan",
+      "content": "### 📋 Comprehensive Project Plan\n\n#### 1. Architecture Overview\n- **Frontend / Client**: Next.js 15 App Router with Tailwind CSS & accessible UI components.\n- **Backend / Realtime**: Supabase PostgreSQL with Row-Level Security (RLS) and real-time pub/sub subscriptions.\n- **State Management**: React Query / SWR with optimistic updates.\n\n#### 2. Core Modules & Data Models\n- **Queue / Token Management**:\n  - Sequential daily token generator (`#A001`, `#A002`).\n  - Statuses: `waiting`, `called`, `serving`, `completed`, `no_show`.\n- **Public Screen**:\n  - Live full-screen display of current token with audio chime.\n  - Estimated wait times based on historical queue throughput.\n- **Staff Control Station**:\n  - One-click \"Call Next\", \"Recall\", and \"Mark Done\".\n  - Multi-counter support (Counter 1, Counter 2).\n\n#### 3. Milestones & Build Order\n1. **Milestone 1**: Database schema & token state machine.\n2. **Milestone 2**: Public queue display component & customer self-checkin modal.\n3. **Milestone 3**: Staff counter panel & real-time synchronization.\n4. **Milestone 4**: Audio/visual alerts and polish.",
+      "source_chat_id": "22222222-2222-2222-2222-222222222222",
+      "importance": "high",
+      "id": "402deb8f-3fcf-4262-ba1a-fd19bc927ee2",
+      "created_at": "2026-10-04T20:06:53.189Z",
+      "updated_at": "2026-10-04T20:06:53.189Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "progress",
+      "title": "Builder Agent Prompt Generated",
+      "content": "Prepared prompt for agent session: \"I understand your vision for this project. To make sure we architect this properly, let's look at th...\"",
+      "source_chat_id": "33333333-3333-3333-3333-333333333333",
+      "importance": "normal",
+      "id": "31c71f81-4ce3-4922-b222-a2531773e260",
+      "created_at": "2026-10-04T20:06:53.246Z",
+      "updated_at": "2026-10-04T20:06:53.246Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "progress",
+      "title": "Builder Agent Output Imported",
+      "content": "Agent output imported (output): \"Implemented components/QueueDisplay.tsx and audio chime toggle in components/StaffPanel.tsx.\"",
+      "source_chat_id": "33333333-3333-3333-3333-333333333333",
+      "importance": "normal",
+      "id": "d059f53b-e33f-47a1-84d1-c46118cb2625",
+      "created_at": "2026-10-04T20:06:53.282Z",
+      "updated_at": "2026-10-04T20:06:53.282Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "progress",
+      "title": "Agent Review: Partially completed",
+      "content": "Status: Partially completed. Next recommended: Fix the Recall button behavior and implement the Web Audio API sound chime toggle.. Completed: Created initial UI layout for QueueDisplay and StaffPanel components; Added token number state management and increment logic; Implemented responsive desktop and mobile container styles",
+      "source_chat_id": "33333333-3333-3333-3333-333333333333",
+      "importance": "high",
+      "id": "5a46464d-f769-445c-af3b-7c01a9709431",
+      "created_at": "2026-10-04T20:06:53.322Z",
+      "updated_at": "2026-10-04T20:06:53.322Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "issue",
+      "title": "Review Issues Detected",
+      "content": "Recall button triggers counter increment instead of replaying current token",
+      "source_chat_id": "33333333-3333-3333-3333-333333333333",
+      "importance": "high",
+      "id": "9c5d2f24-528b-4c56-a8a3-6c4f3d7659da",
+      "created_at": "2026-10-04T20:06:53.324Z",
+      "updated_at": "2026-10-04T20:06:53.324Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "progress",
+      "title": "Builder Agent Prompt Generated",
+      "content": "Prepared prompt for agent session: \"I understand your vision for this project. To make sure we architect this properly, let's look at th...\"",
+      "source_chat_id": "22222222-2222-2222-2222-222222222222",
+      "importance": "normal",
+      "id": "3bb4d0cd-f0e1-4d4e-8f76-e069b58b3e78",
+      "created_at": "2026-10-04T20:14:03.624Z",
+      "updated_at": "2026-10-04T20:14:03.624Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "memory_type": "progress",
+      "title": "Builder Agent Prompt Generated",
+      "content": "Prepared prompt for agent session: \"I understand your vision for this project. To make sure we architect this properly, let's look at th...\"",
+      "source_chat_id": "22222222-2222-2222-2222-222222222222",
+      "importance": "normal",
+      "id": "403f1c9e-8ce3-4906-988e-5613caaeef7b",
+      "created_at": "2026-10-04T20:14:05.335Z",
+      "updated_at": "2026-10-04T20:14:05.335Z"
+    }
+  ],
+  "agent_prompts": [
+    {
+      "id": "44444444-4444-4444-4444-444444444444",
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "agent_chat_id": "33333333-3333-3333-3333-333333333333",
+      "prompt_text": "Context: Waiting Room App prototype. Build the core token queue management interface.\nExact task:\n1. Create a queue state store managing tokens (id, number, name, status: waiting | called | done).\n2. Create two views: Public Screen displaying \"Currently Serving: #X\" and a Staff Operator Panel with \"Call Next\", \"Recall\", and \"Mark Done\" buttons.\n3. Add a check-in modal where guests type their name and receive a token ticket.\nFiles:\n- components/QueueDisplay.tsx\n- components/StaffPanel.tsx\n- components/CheckInModal.tsx\nConstraints:\n- Clean responsive Tailwind CSS styling.\n- No external state libraries beyond React state or Context.\nAcceptance Criteria:\n- Guest clicks Check In -> Gets next sequential token.\n- Staff clicks Call Next -> Serving token increments and displays with audio/visual flash indicator.\n- List shows remaining waiting guests.",
+      "status": "ready",
+      "created_at": "2026-10-04T19:02:14.041Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "agent_chat_id": "33333333-3333-3333-3333-333333333333",
+      "prompt_text": "I understand your vision for this project. To make sure we architect this properly, let's look at the key requirements:\n\n1. **User Experience**: We need a low-friction interface so visitors can check in within 5 seconds without needing an account.\n2. **Staff Workflow**: Operators need clear keyboard shortcuts or large buttons to advance the queue quickly during peak hours.\n3. **Resilience**: The system should maintain state across page refreshes and display network connectivity status.\n\nWould you like me to generate the full structured **Project Plan**, or shall we refine the specific database requirements first?",
+      "status": "ready",
+      "id": "12a71cfc-8ff4-4a44-bd8a-f7da50af49db",
+      "created_at": "2026-10-04T20:06:53.234Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "agent_chat_id": "22222222-2222-2222-2222-222222222222",
+      "prompt_text": "I understand your vision for this project. To make sure we architect this properly, let's look at the key requirements:\n\n1. **User Experience**: We need a low-friction interface so visitors can check in within 5 seconds without needing an account.\n2. **Staff Workflow**: Operators need clear keyboard shortcuts or large buttons to advance the queue quickly during peak hours.\n3. **Resilience**: The system should maintain state across page refreshes and display network connectivity status.\n\nWould you like me to generate the full structured **Project Plan**, or shall we refine the specific database requirements first?",
+      "status": "ready",
+      "id": "bd580475-7c75-4856-a37f-24d21431ea2c",
+      "created_at": "2026-10-04T20:14:03.613Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "agent_chat_id": "22222222-2222-2222-2222-222222222222",
+      "prompt_text": "I understand your vision for this project. To make sure we architect this properly, let's look at the key requirements:\n\n1. **User Experience**: We need a low-friction interface so visitors can check in within 5 seconds without needing an account.\n2. **Staff Workflow**: Operators need clear keyboard shortcuts or large buttons to advance the queue quickly during peak hours.\n3. **Resilience**: The system should maintain state across page refreshes and display network connectivity status.\n\nWould you like me to generate the full structured **Project Plan**, or shall we refine the specific database requirements first?",
+      "status": "ready",
+      "id": "2f2cf45e-ed52-4b9d-bf5a-fbc8a42085ed",
+      "created_at": "2026-10-04T20:14:05.327Z"
+    }
+  ],
+  "agent_artifacts": [
+    {
+      "id": "77777777-7777-7777-7777-777777777771",
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "agent_chat_id": "33333333-3333-3333-3333-333333333333",
+      "artifact_type": "output",
+      "content": "Completed initial draft of QueueDisplay.tsx, StaffPanel.tsx, and CheckInModal.tsx. All components render with token state hooks and call next functionality.",
+      "created_at": "2026-10-04T19:12:14.041Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "agent_chat_id": "33333333-3333-3333-3333-333333333333",
+      "artifact_type": "output",
+      "content": "Implemented components/QueueDisplay.tsx and audio chime toggle in components/StaffPanel.tsx.",
+      "id": "d3025b40-baa6-4c06-96f1-ef5bc8a3f1da",
+      "created_at": "2026-10-04T20:04:45.324Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "agent_chat_id": "33333333-3333-3333-3333-333333333333",
+      "artifact_type": "output",
+      "content": "Implemented components/QueueDisplay.tsx and audio chime toggle in components/StaffPanel.tsx.",
+      "id": "116ee2ec-539c-437b-be2f-a91469f8bac2",
+      "created_at": "2026-10-04T20:05:29.751Z"
+    },
+    {
+      "project_id": "11111111-1111-1111-1111-111111111111",
+      "agent_chat_id": "33333333-3333-3333-3333-333333333333",
+      "artifact_type": "output",
+      "content": "Implemented components/QueueDisplay.tsx and audio chime toggle in components/StaffPanel.tsx.",
+      "id": "f8ceadac-c370-40c3-b94f-769ebe51e38d",
+      "created_at": "2026-10-04T20:06:53.279Z"
+    }
+  ],
+  "api_keys": [
+    {
+      "id": "6af9194c-bbcc-4e6c-a7ff-478b93a3f38f",
+      "user_id": "00000000-0000-0000-0000-000000000001",
+      "provider": "openrouter",
+      "raw_key": "sk-or-v1-supersecretkey1234567890abcdef",
+      "masked_key": "sk-or-••••cdef",
+      "label": "Test Secret Key",
+      "created_at": "2026-10-04T20:03:36.547Z"
+    },
+    {
+      "id": "1e95feff-7f75-41e1-9a41-a0688078cdff",
+      "user_id": "00000000-0000-0000-0000-000000000001",
+      "provider": "openrouter",
+      "raw_key": "sk-or-v1-supersecretkey1234567890abcdef",
+      "masked_key": "sk-or-••••cdef",
+      "label": "Test Secret Key",
+      "created_at": "2026-10-04T20:04:45.496Z"
+    }
+  ]
+}
