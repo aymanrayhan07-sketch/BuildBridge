@@ -63,8 +63,6 @@ export const ChatGPTBuilderPane: React.FC<ChatGPTBuilderPaneProps> = ({
   onScreenshotUploaded,
   onReviewRequested,
 }) => {
-  const latestPrompt = prompts[0];
-  const [copiedPrompt, setCopiedPrompt] = useState(false);
   const [modelModalOpen, setModelModalOpen] = useState(false);
   const [attachMenuOpen, setAttachMenuOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -106,13 +104,6 @@ export const ChatGPTBuilderPane: React.FC<ChatGPTBuilderPaneProps> = ({
       isCancelled = true;
     };
   }, [currentChatId]);
-
-  const handleCopyPrompt = () => {
-    if (!latestPrompt?.prompt_text) return;
-    navigator.clipboard.writeText(latestPrompt.prompt_text);
-    setCopiedPrompt(true);
-    setTimeout(() => setCopiedPrompt(false), 2000);
-  };
 
   const handleSendChatMessage = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
@@ -319,43 +310,6 @@ export const ChatGPTBuilderPane: React.FC<ChatGPTBuilderPaneProps> = ({
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {/* Permission banner */}
             <ApprovalBanner />
-
-            {/* Current Prompt Card (The Bridge from Planner) */}
-            {latestPrompt && (
-              <div className="bg-[#212121] border border-violet-500/30 rounded-2xl p-4 shadow-xl space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-violet-300">
-                    <Sparkles className="w-4 h-4 text-violet-400" />
-                    <span>Current Agent Prompt</span>
-                  </div>
-                  <button
-                    onClick={handleCopyPrompt}
-                    className="px-3 py-1 bg-violet-600 hover:bg-violet-500 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm"
-                  >
-                    {copiedPrompt ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-300" /> Copied!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" /> Copy Prompt
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                <div className="bg-[#181818] p-3 rounded-xl border border-[#2d2d2d] text-xs font-mono text-slate-200 max-h-40 overflow-y-auto whitespace-pre-wrap leading-relaxed select-all">
-                  {latestPrompt.prompt_text}
-                </div>
-
-                <div className="flex items-center gap-2 text-[11px] text-slate-400 pt-1">
-                  <ExternalLink className="w-3.5 h-3.5 text-violet-400 shrink-0" />
-                  <span>
-                    Paste this into <strong>Cline</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>, or <strong>Claude Code</strong>.
-                  </span>
-                </div>
-              </div>
-            )}
 
             {/* Agent Output Importer Area */}
             <div className="bg-[#212121] border border-[#2d2d2d] rounded-2xl p-4 space-y-3">
